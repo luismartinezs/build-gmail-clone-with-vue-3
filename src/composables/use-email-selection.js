@@ -10,8 +10,16 @@ export const useEmailSelection = function () {
       emails.add(email)
     }
   }
+  let clear = () => {
+    emails.clear()
+  }
+  let addMultiple = newEmails => {
+    newEmails.forEach(email => {
+      emails.add(email)
+    })
+  }
 
-  return { emails, toggle }
+  return { emails, toggle, addMultiple, clear }
 }
 
 export default useEmailSelection
